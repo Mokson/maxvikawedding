@@ -9,7 +9,7 @@ export function LanguageToggle() {
   const router = useRouter();
 
   const otherLocale = locale === "en" ? "uk" : "en";
-  const label = locale === "en" ? "UK" : "EN";
+  const label = locale === "en" ? "Укр" : "EN";
 
   function handleSwitch() {
     router.replace(pathname, { locale: otherLocale });

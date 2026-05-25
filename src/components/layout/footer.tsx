@@ -1,11 +1,20 @@
 import { useTranslations } from "next-intl";
 
+const FOOTER_LINKS = [
+  { id: "about-us", key: "aboutUs" },
+  { id: "schedule", key: "schedule" },
+  { id: "venue", key: "venue" },
+  { id: "travel", key: "travel" },
+  { id: "faq", key: "faq" },
+  { id: "rsvp", key: "rsvp" },
+] as const;
+
 export function Footer() {
   const t = useTranslations("footer");
   const email = process.env.RSVP_EMAIL || "email@example.com";
 
   return (
-    <footer className="bg-warm-white px-6 py-16">
+    <footer className="bg-cream px-6 py-16">
       <div className="mx-auto max-w-5xl">
         <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-start">
           <div className="text-center md:text-left">
@@ -18,28 +27,17 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="flex flex-col items-center gap-3">
-            <a
-              href="#schedule"
-              className="text-muted hover:text-dark font-sans text-sm tracking-[0.05em] underline transition-colors"
-            >
-              {t("venue")}
-            </a>
-            <a
-              href="#travel"
-              className="text-muted hover:text-dark font-sans text-sm tracking-[0.05em] underline transition-colors"
-            >
-              {t("travelStay")}
-            </a>
-            <a
-              href="#rsvp"
-              className="text-muted hover:text-dark font-sans text-sm tracking-[0.05em] underline transition-colors"
-            >
-              {t("rsvp")}
-            </a>
-          </div>
-
-          <div className="text-center md:text-right" />
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+            {FOOTER_LINKS.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className="text-muted hover:text-dark font-sans text-sm tracking-[0.05em] underline transition-colors"
+              >
+                {t(link.key)}
+              </a>
+            ))}
+          </nav>
         </div>
 
         <div className="border-taupe/20 mt-12 border-t pt-6 text-center">

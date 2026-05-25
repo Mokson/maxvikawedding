@@ -8,16 +8,18 @@ export const siteConfig = {
     venue: {
       name: "Vinha Boutique Hotel",
       address: "R. Fonte da Vinha 383, 4430-487 Vila Nova de Gaia, Portugal",
-      city: "Vila Nova de Gaia",
+      city: "Porto",
       country: "Portugal",
       coordinates: {
         lat: 41.1239,
         lng: -8.6118,
       },
+      instagram: "https://www.instagram.com/vinha_boutiquehotel/",
+      instagramPost: "https://www.instagram.com/p/DOOR0F9CAGX/",
     },
   },
   contact: {
-    rsvpEmail: "email@example.com",
+    rsvpEmail: "vikarozumovych@gmail.com",
     rsvpFromEmail: "RSVP <onboarding@resend.dev>",
   },
   url: "https://maxvika.life",

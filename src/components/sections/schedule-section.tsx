@@ -22,15 +22,15 @@ export function ScheduleSection() {
         </h2>
 
         <div className="relative">
-          <div className="bg-taupe/30 absolute top-0 bottom-0 left-[100px] w-px md:left-[120px]" />
+          <div className="bg-taupe/30 absolute top-0 bottom-0 left-[112px] w-px md:left-[136px]" />
 
           <div className="space-y-8">
             {SCHEDULE_KEYS.map((key) => (
-              <div key={key} className="flex items-baseline gap-5 md:gap-6">
+              <div key={key} className="flex items-center gap-5 md:gap-6">
                 <span className="text-muted w-[88px] shrink-0 text-right font-mono text-sm tabular-nums md:w-[108px]">
                   {t(`${key}.time`)}
                 </span>
-                <div className="bg-taupe relative z-10 mt-1.5 h-2 w-2 shrink-0 rounded-full" />
+                <div className="bg-taupe relative z-10 h-2 w-2 shrink-0 rounded-full" />
                 <span className="text-dark font-sans text-sm font-medium">{t(`${key}.label`)}</span>
               </div>
             ))}

@@ -1,52 +1,60 @@
 "use client";
 
+import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Countdown } from "@/components/shared/countdown";
-import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export function HeroSection() {
   const t = useTranslations("hero");
-  const { city, country } = siteConfig.wedding.venue;
+  const { coordinates } = siteConfig.wedding.venue;
+  const venueUrl = `https://www.google.com/maps/search/?api=1&query=${coordinates.lat},${coordinates.lng}`;
 
   return (
     <section
       id="hero"
-      className="bg-warm-white relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-16"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-16"
     >
-      <div className="absolute inset-0 bg-[url('/images/photo-unsplash-1.jpg')] bg-cover bg-center opacity-20" />
+      <div className="absolute inset-0 bg-[url('/images/hero-wedding.jpg')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-[rgba(48,42,36,0.45)]" />
 
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
-        <p className="text-muted animate-fade-in mb-8 font-serif text-3xl font-normal italic tracking-normal [animation-delay:200ms] md:text-4xl">
+        <p className="animate-fade-in mb-8 font-serif text-3xl font-normal italic tracking-normal text-white/70 [animation-delay:200ms] md:text-4xl">
           {t("subtitle")}
         </p>
 
-        <h1 className="text-dark animate-fade-in-up font-serif text-5xl leading-tight font-light [animation-delay:500ms] md:text-7xl lg:text-8xl">
+        <h1 className="animate-fade-in-up font-serif text-5xl leading-tight font-light text-white [animation-delay:500ms] md:text-7xl lg:text-8xl">
           {t("names")}
         </h1>
 
         <div className="animate-fade-in mt-10 flex items-center gap-6 [animation-delay:1000ms]">
-          <div className="bg-taupe h-px w-16" />
-          <p className="text-muted font-sans text-lg font-medium tracking-[0.3em] uppercase md:text-xl">
+          <div className="h-px w-16 bg-white/30" />
+          <p className="font-sans text-lg font-medium tracking-[0.3em] uppercase text-white/80 md:text-xl">
             {t("date")}
           </p>
-          <div className="bg-taupe h-px w-16" />
+          <div className="h-px w-16 bg-white/30" />
         </div>
 
-        <p className="text-muted animate-fade-in mt-4 font-sans text-sm tracking-[0.15em] [animation-delay:1200ms]">
-          {city}, {country}
-        </p>
+        <a
+          href={venueUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="animate-fade-in mt-4 inline-flex items-center gap-1.5 font-sans text-sm tracking-[0.15em] text-white transition-colors hover:text-white/80 [animation-delay:1200ms]"
+        >
+          <MapPin className="size-3.5" strokeWidth={1.5} />
+          {t("location")}
+        </a>
 
-        <div className="animate-fade-in-up mt-16 opacity-40 [animation-delay:1300ms]">
+        <div className="animate-fade-in-up mt-16 [animation-delay:1300ms]">
           <Countdown />
         </div>
 
-        <Button
-          asChild
-          className="animate-fade-in-up mt-12 h-auto px-10 py-4 font-sans text-xs tracking-[0.2em] uppercase [animation-delay:1600ms]"
+        <a
+          href="#rsvp"
+          className="animate-fade-in-up mt-12 border border-white/80 px-10 py-4 font-sans text-xs font-medium tracking-[0.2em] uppercase text-white transition-colors hover:bg-white hover:text-dark [animation-delay:1600ms]"
         >
-          <a href="#rsvp">{t("rsvpButton")}</a>
-        </Button>
+          {t("rsvpButton")}
+        </a>
       </div>
     </section>
   );

@@ -6,10 +6,10 @@
   },
   "nav": {
     "hero": "Home",
-    "ourStory": "Our Story",
+    "aboutUs": "About Us",
     "schedule": "Schedule",
+    "venue": "Venue",
     "travel": "Travel & Porto",
-    "gallery": "Gallery",
     "faq": "FAQ",
     "rsvp": "RSVP"
   },
@@ -30,16 +30,13 @@
     "map": "Map",
     "joinUs": "Join Us",
     "hopeMakeIt": "We hope you can make it!",
+    "location": "Porto, Portugal",
     "rsvpButton": "RSVP"
   },
-  "ourStory": {
-    "title": "Our Story",
-    "howItBegan": "How It All Began",
-    "quoteHim": "I saw her across the room and I couldn't look away.",
-    "quoteHer": "We caught eye contact and I was mesmerized by that smile.",
-    "coupleTitle": "Max & Victoria",
-    "narrative": "We met unexpectedly and discovered we had everything in common. After years of adventures together, we're ready to make it official.",
-    "restIsHistory": "And the Rest Is History"
+  "aboutUs": {
+    "eyebrow": "Our Journey",
+    "title": "About Us",
+    "paragraph": "We met unexpectedly and discovered we had everything in common. After years of adventures together, we're ready to make it official. We can't wait to celebrate this next chapter with the people who mean the most to us."
   },
   "schedule": {
     "title": "Schedule",
@@ -51,6 +48,13 @@
     "dancing": { "time": "7:30 PM", "label": "Dancing" },
     "windDown": { "time": "10:00 PM", "label": "Wind Down" }
   },
+  "venue": {
+    "eyebrow": "The Venue",
+    "title": "Vinha Boutique Hotel",
+    "description": "Nestled among vineyards in Vila Nova de Gaia, Vinha Boutique Hotel is an intimate estate where Portuguese tradition meets refined elegance. The venue offers panoramic views of the Douro Valley, lush gardens, and a warm atmosphere that feels like a private celebration.",
+    "chefHighlight": "Your wedding dinner will be crafted by a Michelin-recognized chef, showcasing the finest Portuguese cuisine with locally sourced ingredients and seasonal flavors.",
+    "viewOnInstagram": "View on Instagram"
+  },
   "travel": {
     "title": "Travel & Porto",
     "gettingThere": "Getting There",
@@ -58,15 +62,10 @@
     "whereToStay": "Where to Stay",
     "whereToStayText": "We'll share accommodation suggestions closer to the date.",
     "whereToStayNote": "More details coming soon!",
+    "portoGuide": "Discover Porto",
+    "portoGuideText": "Porto is one of Europe's most beautiful and underrated cities. Wander through colorful Ribeira, cross the iconic Dom Luis I Bridge, taste port wine in centuries-old cellars, and enjoy fresh seafood along the Atlantic coast. Arrive a few days early or stay after the wedding to explore.",
     "thingsToDo": "Things to Do",
-    "theVenue": "The Venue",
-    "viewOnInstagram": "View on Instagram",
     "thingsToDoText": "Porto and Vila Nova de Gaia offer world-famous port wine cellars, stunning riverfront views, and vibrant historic neighborhoods to explore before and after the wedding."
-  },
-  "gallery": {
-    "title": "Gallery",
-    "guestPhotos": "Share your photos with us!",
-    "albumLink": "Add to Album"
   },
   "faq": {
     "title": "FAQ",
@@ -99,9 +98,9 @@
     "attending": "Will you be attending?",
     "yes": "Joyfully Accept",
     "no": "Regretfully Decline",
-    "adults": "Adults in Your Party",
-    "children": "Children Under 12",
-    "dietary": "Dietary Requirements",
+    "adults": "Adults",
+    "children": "Children",
+    "dietary": "Dietary Requirements (optional)",
     "dietaryPlaceholder": "Vegetarian, vegan, allergies, etc.",
     "message": "Message (optional)",
     "messagePlaceholder": "Song requests or a note for the couple...",
@@ -116,8 +115,11 @@
   "footer": {
     "questions": "Questions?",
     "emailUs": "Email Us",
+    "aboutUs": "About Us",
+    "schedule": "Schedule",
     "venue": "Venue",
-    "travelStay": "Travel & Stay",
+    "travel": "Travel & Porto",
+    "faq": "FAQ",
     "rsvp": "RSVP"
   }
 }

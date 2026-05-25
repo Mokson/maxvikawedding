@@ -15,13 +15,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 type FormState = "idle" | "sending" | "success" | "error";
 
 export function RsvpForm() {
   const t = useTranslations("rsvp");
   const [state, setState] = useState<FormState>("idle");
+  const [attending, setAttending] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -80,22 +80,26 @@ export function RsvpForm() {
         <p className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase">
           {t("attending")}
         </p>
-        <RadioGroup name="attending" required className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           {[
             { value: "yes", label: t("yes") },
             { value: "no", label: t("no") },
           ].map((opt) => (
-            <label key={opt.value} className="cursor-pointer">
-              <RadioGroupItem value={opt.value} className="peer sr-only" />
-              <span
-                data-slot="radio-card"
-                className="text-muted-foreground peer-data-[state=checked]:border-foreground peer-data-[state=checked]:text-foreground block border py-3 text-center font-sans text-xs tracking-[0.15em] uppercase transition-colors"
-              >
-                {opt.label}
-              </span>
-            </label>
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => setAttending(opt.value)}
+              className={`cursor-pointer border py-3 text-center font-sans text-xs tracking-[0.15em] uppercase transition-colors ${
+                attending === opt.value
+                  ? "border-foreground text-foreground"
+                  : "text-muted-foreground"
+              }`}
+            >
+              {opt.label}
+            </button>
           ))}
-        </RadioGroup>
+        </div>
+        <input type="hidden" name="attending" value={attending} />
       </div>
 
       <div className="grid grid-cols-2 gap-6">

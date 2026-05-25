@@ -1,9 +1,9 @@
 export const sections = [
   { id: "hero", navKey: "hero" },
-  { id: "our-story", navKey: "ourStory" },
+  { id: "about-us", navKey: "aboutUs" },
   { id: "schedule", navKey: "schedule" },
+  { id: "venue", navKey: "venue" },
   { id: "travel", navKey: "travel" },
-  { id: "gallery", navKey: "gallery" },
   { id: "faq", navKey: "faq" },
   { id: "rsvp", navKey: "rsvp" },
 ] as const;
