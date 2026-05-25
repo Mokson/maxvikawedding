@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 import { Countdown } from "./countdown";
 
 export function Hero() {
@@ -12,51 +11,26 @@ export function Hero() {
       <div className="absolute inset-0 bg-[url('/images/hero-placeholder.jpg')] bg-cover bg-center opacity-20" />
 
       <div className="relative z-10 text-center px-6 flex flex-col items-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="font-sans text-xs tracking-[0.3em] uppercase text-muted mb-6"
-        >
+        <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted mb-6 animate-fade-in [animation-delay:200ms]">
           {t("subtitle")}
-        </motion.p>
+        </p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-dark leading-tight"
-        >
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-dark leading-tight animate-fade-in-up [animation-delay:500ms]">
           {t("names")}
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="font-serif text-2xl md:text-3xl font-light text-muted mt-6 tracking-[0.15em]"
-        >
+        <p className="font-serif text-2xl md:text-3xl font-light text-muted mt-6 tracking-[0.15em] animate-fade-in [animation-delay:1000ms]">
           {t("date")}
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.3 }}
-          className="mt-12"
-        >
+        <div className="mt-12 animate-fade-in-up [animation-delay:1300ms]">
           <Countdown />
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.8 }}
-        className="absolute bottom-8"
-      >
+      <div className="absolute bottom-8 animate-fade-in [animation-delay:1800ms]">
         <div className="w-px h-12 bg-taupe/50 mx-auto animate-pulse" />
-      </motion.div>
+      </div>
     </section>
   );
 }
