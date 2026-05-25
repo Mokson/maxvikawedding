@@ -57,15 +57,7 @@ export function Navbar() {
           M&V
         </a>
 
-        <div className="flex items-center gap-6">
-          <LanguageToggle />
-          <a
-            href="#rsvp"
-            className="text-dark border-dark hover:bg-dark hover:text-cream border px-5 py-2 font-sans text-xs font-medium tracking-[0.2em] uppercase transition-colors"
-          >
-            {t("rsvp")}
-          </a>
-        </div>
+        <LanguageToggle />
       </nav>
     </header>
   );
