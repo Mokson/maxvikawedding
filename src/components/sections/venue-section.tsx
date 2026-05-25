@@ -1,7 +1,13 @@
 import { useTranslations } from "next-intl";
 import { Section } from "@/components/shared/section-wrapper";
+import { ZoomableGallery } from "@/components/shared/zoomable-gallery";
 import { MapEmbed } from "@/components/shared/map-embed";
 import { siteConfig } from "@/config/site";
+
+const VENUE_PHOTOS = [
+  { src: "/images/vinha-exterior.jpg", alt: "Vinha Boutique Hotel exterior" },
+  { src: "/images/vinha-dining.jpg", alt: "Vinha Boutique Hotel dining" },
+];
 
 export function VenueSection() {
   const t = useTranslations("venue");
@@ -50,6 +56,11 @@ export function VenueSection() {
             </a>
           </div>
         </div>
+
+        <ZoomableGallery
+          photos={VENUE_PHOTOS}
+          className="mx-auto mt-12 grid max-w-xl grid-cols-2 gap-3"
+        />
 
         <div className="mx-auto mt-16 max-w-xl">
           <MapEmbed venue={h("venue")} address={h("venueAddress")} />
