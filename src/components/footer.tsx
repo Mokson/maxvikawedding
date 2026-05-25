@@ -17,7 +17,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-wrap justify-center gap-8">
           <Link
-            href="/"
+            href="/#venue"
             className="text-xs font-sans tracking-[0.15em] uppercase text-muted hover:text-dark transition-colors"
           >
             {t("venue")}

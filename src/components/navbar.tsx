@@ -33,6 +33,7 @@ export function Navbar() {
 
         <Link
           href="/"
+          onClick={() => setIsOpen(false)}
           className="font-serif text-2xl font-light tracking-wider text-dark absolute left-1/2 -translate-x-1/2"
         >
           M&V

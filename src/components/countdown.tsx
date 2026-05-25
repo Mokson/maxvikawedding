@@ -21,25 +21,26 @@ function calculateTimeLeft() {
 
 export function Countdown() {
   const t = useTranslations("home.countdown");
-  const [time, setTime] = useState(calculateTimeLeft);
+  const [time, setTime] = useState<ReturnType<typeof calculateTimeLeft> | null>(null);
 
   useEffect(() => {
+    setTime(calculateTimeLeft());
     const timer = setInterval(() => setTime(calculateTimeLeft()), 1000);
     return () => clearInterval(timer);
   }, []);
 
   const units = [
-    { value: time.days, label: t("days") },
-    { value: time.hours, label: t("hours") },
-    { value: time.minutes, label: t("minutes") },
-    { value: time.seconds, label: t("seconds") },
+    { value: time?.days ?? 0, label: t("days") },
+    { value: time?.hours ?? 0, label: t("hours") },
+    { value: time?.minutes ?? 0, label: t("minutes") },
+    { value: time?.seconds ?? 0, label: t("seconds") },
   ];
 
   return (
     <div className="flex gap-8 md:gap-12">
       {units.map((unit) => (
         <div key={unit.label} className="text-center">
-          <span className="block font-serif text-4xl md:text-5xl font-light text-dark">
+          <span className={`block font-serif text-4xl md:text-5xl font-light text-dark transition-opacity ${time ? "opacity-100" : "opacity-0"}`}>
             {String(unit.value).padStart(2, "0")}
           </span>
           <span className="block text-[10px] md:text-xs font-sans tracking-[0.2em] uppercase text-muted mt-2">

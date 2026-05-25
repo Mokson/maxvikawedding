@@ -23,7 +23,7 @@ function HomeContent() {
     <>
       <Hero />
 
-      <Section className="py-24 px-6 bg-cream">
+      <Section className="py-24 px-6 bg-cream" id="venue">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-light text-center text-dark mb-16">
             {t("details")}
