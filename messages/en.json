@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Max & Victoria",
+    "description": "We're getting married! Join us on September 13, 2026."
+  },
+  "nav": {
+    "ourStory": "Our Story",
+    "registry": "Registry",
+    "rsvp": "RSVP",
+    "travelStay": "Travel & Stay"
+  },
+  "home": {
+    "names": "Max & Victoria",
+    "subtitle": "We're Getting Married!",
+    "date": "13 . 09 . 26",
+    "countdown": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
+    },
+    "details": "Details",
+    "ceremony": "Ceremony",
+    "ceremonyTime": "1:00 PM",
+    "ceremonyVenue": "Grace Church",
+    "ceremonyAddress": "123 Demo St.\nFlagstaff, AZ 12345",
+    "map": "Map",
+    "reception": "Reception",
+    "receptionTime": "4:30 PM - 10:00 PM",
+    "receptionVenue": "The Barrel Keg",
+    "receptionAddress": "123 Demo St.\nFlagstaff, AZ 12345",
+    "joinUs": "Join Us",
+    "hopeMakeIt": "We hope you can make it!",
+    "rsvpButton": "RSVP"
+  },
+  "ourStory": {
+    "title": "Our Story",
+    "howItBegan": "How It All Began",
+    "quoteHim": "I saw her across the room and I couldn't look away.",
+    "quoteHer": "We caught eye contact and I was mesmerized by that smile.",
+    "coupleTitle": "Max & Victoria",
+    "narrative": "We met unexpectedly and discovered we had everything in common. After years of adventures together, we're ready to make it official.",
+    "restIsHistory": "And the Rest Is History"
+  },
+  "registry": {
+    "title": "Registry",
+    "message": "Many of you are traveling to celebrate with us, so your presence means the world to us and is all we ask for.",
+    "giftNote": "For those who have been asking, we've set up a small registry and honeymoon fund.",
+    "viewRegistry": "View Registry"
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "intro": "We look forward to seeing you! Fill out the form below.",
+    "name": "Full Name",
+    "email": "Email",
+    "attending": "Will you be attending?",
+    "yes": "Joyfully Accept",
+    "no": "Regretfully Decline",
+    "adults": "Adults in Your Party",
+    "children": "Children Under 12",
+    "message": "Message (optional)",
+    "messagePlaceholder": "Any dietary restrictions, song requests, or a note for the couple...",
+    "submit": "Send RSVP",
+    "sending": "Sending...",
+    "successTitle": "Thank You!",
+    "successMessage": "Your RSVP has been received. We can't wait to celebrate with you!",
+    "errorTitle": "Something went wrong",
+    "errorMessage": "Please try again or email us directly.",
+    "sendAnother": "Send Another RSVP"
+  },
+  "travelStay": {
+    "title": "Travel & Stay",
+    "gettingThere": "Getting There",
+    "gettingThereText": "Flagstaff is located in northern Arizona, easily accessible by car or plane.",
+    "whereToStay": "Where to Stay",
+    "whereToStayText": "We recommend staying at the following boutique hotel close to the venue.",
+    "hotelName": "Vinha Boutique Hotel",
+    "hotelDescription": "A charming boutique hotel with vineyard views",
+    "visitWebsite": "Visit Website",
+    "viewOnMap": "View on Map",
+    "thingsToDo": "Things to Do",
+    "thingsToDoText": "Flagstaff is a beautiful mountain town with plenty to explore before and after the wedding."
+  },
+  "footer": {
+    "questions": "Questions?",
+    "emailUs": "Email Us",
+    "ceremonyReception": "Ceremony & Reception",
+    "travelStay": "Travel & Stay",
+    "registry": "Registry",
+    "rsvp": "RSVP"
+  }
+}
