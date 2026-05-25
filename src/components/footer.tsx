@@ -20,7 +20,7 @@ export function Footer() {
             href="/"
             className="text-xs font-sans tracking-[0.15em] uppercase text-muted hover:text-dark transition-colors"
           >
-            {t("ceremonyReception")}
+            {t("venue")}
           </Link>
           <Link
             href="/travel-stay"

@@ -8,10 +8,10 @@ export function Hero() {
   const t = useTranslations("home");
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-warm-white overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-warm-white overflow-hidden pt-16">
       <div className="absolute inset-0 bg-[url('/images/hero-placeholder.jpg')] bg-cover bg-center opacity-20" />
 
-      <div className="relative z-10 text-center px-6 py-20">
+      <div className="relative z-10 text-center px-6 flex flex-col items-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
