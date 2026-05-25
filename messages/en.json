@@ -1,14 +1,19 @@
 {
   "meta": {
     "title": "Max & Victoria",
-    "description": "We're getting married! Join us on September 13, 2026."
+    "description": "We're getting married! Join us on September 13, 2026.",
+    "notFound": "Page not found"
   },
   "nav": {
+    "hero": "Home",
     "ourStory": "Our Story",
-    "rsvp": "RSVP",
-    "travelStay": "Travel & Stay"
+    "schedule": "Schedule",
+    "travel": "Travel & Porto",
+    "gallery": "Gallery",
+    "faq": "FAQ",
+    "rsvp": "RSVP"
   },
-  "home": {
+  "hero": {
     "names": "Max & Victoria",
     "subtitle": "We're Getting Married!",
     "date": "13 . 09 . 26",
@@ -36,6 +41,54 @@
     "narrative": "We met unexpectedly and discovered we had everything in common. After years of adventures together, we're ready to make it official.",
     "restIsHistory": "And the Rest Is History"
   },
+  "schedule": {
+    "title": "Schedule",
+    "arrival": { "time": "2:00 PM", "label": "Arrival & Welcome" },
+    "ceremony": { "time": "3:00 PM", "label": "Ceremony" },
+    "cocktails": { "time": "4:00 PM", "label": "Cocktail Hour" },
+    "dinner": { "time": "5:30 PM", "label": "Dinner" },
+    "cake": { "time": "7:00 PM", "label": "Cake Cutting" },
+    "dancing": { "time": "7:30 PM", "label": "Dancing" },
+    "windDown": { "time": "10:00 PM", "label": "Wind Down" }
+  },
+  "travel": {
+    "title": "Travel & Porto",
+    "gettingThere": "Getting There",
+    "gettingThereText": "Vila Nova de Gaia is just across the Douro River from Porto, Portugal. The nearest airport is Francisco Sa Carneiro Airport (OPO), about 20 minutes by car.",
+    "whereToStay": "Where to Stay",
+    "whereToStayText": "We'll share accommodation suggestions closer to the date.",
+    "whereToStayNote": "More details coming soon!",
+    "thingsToDo": "Things to Do",
+    "thingsToDoText": "Porto and Vila Nova de Gaia offer world-famous port wine cellars, stunning riverfront views, and vibrant historic neighborhoods to explore before and after the wedding."
+  },
+  "gallery": {
+    "title": "Gallery",
+    "guestPhotos": "Share your photos with us!",
+    "albumLink": "Add to Album"
+  },
+  "faq": {
+    "title": "FAQ",
+    "dressCode": {
+      "q": "What is the dress code?",
+      "a": "Details coming soon."
+    },
+    "kids": {
+      "q": "Are kids welcome?",
+      "a": "Yes! Children of all ages are welcome to join the celebration."
+    },
+    "plusOnes": {
+      "q": "Can I bring a plus one?",
+      "a": "Of course! Please include them in your RSVP."
+    },
+    "language": {
+      "q": "What language will the ceremony be in?",
+      "a": "The ceremony will be bilingual, in both English and Ukrainian."
+    },
+    "weather": {
+      "q": "What will the weather be like?",
+      "a": "September in Porto is warm and sunny, typically around 20-25°C. Evenings can be cooler, so a light layer is recommended."
+    }
+  },
   "rsvp": {
     "title": "RSVP",
     "intro": "We look forward to seeing you! Fill out the form below.",
@@ -46,8 +99,10 @@
     "no": "Regretfully Decline",
     "adults": "Adults in Your Party",
     "children": "Children Under 12",
+    "dietary": "Dietary Requirements",
+    "dietaryPlaceholder": "Vegetarian, vegan, allergies, etc.",
     "message": "Message (optional)",
-    "messagePlaceholder": "Any dietary restrictions, song requests, or a note for the couple...",
+    "messagePlaceholder": "Song requests or a note for the couple...",
     "submit": "Send RSVP",
     "sending": "Sending...",
     "successTitle": "Thank You!",
@@ -55,16 +110,6 @@
     "errorTitle": "Something went wrong",
     "errorMessage": "Please try again or email us directly.",
     "sendAnother": "Send Another RSVP"
-  },
-  "travelStay": {
-    "title": "Travel & Stay",
-    "gettingThere": "Getting There",
-    "gettingThereText": "Vila Nova de Gaia is just across the Douro River from Porto, Portugal. The nearest airport is Francisco Sa Carneiro Airport (OPO), about 20 minutes by car.",
-    "whereToStay": "Where to Stay",
-    "whereToStayText": "We'll share accommodation suggestions closer to the date.",
-    "whereToStayNote": "More details coming soon!",
-    "thingsToDo": "Things to Do",
-    "thingsToDoText": "Porto and Vila Nova de Gaia offer world-famous port wine cellars, stunning riverfront views, and vibrant historic neighborhoods to explore before and after the wedding."
   },
   "footer": {
     "questions": "Questions?",

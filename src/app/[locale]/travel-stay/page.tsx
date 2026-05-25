@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { Section } from "@/components/section";
+import { Section } from "@/components/shared/section-wrapper";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -14,49 +14,47 @@ export default async function TravelStayPage({ params }: Props) {
 }
 
 function TravelStayContent() {
-  const t = useTranslations("travelStay");
+  const t = useTranslations("travel");
 
   return (
     <div className="pt-24">
-      <Section className="py-24 px-6 bg-cream">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="font-serif text-4xl md:text-5xl font-light text-dark">
-            {t("title")}
-          </h1>
+      <Section className="bg-cream px-6 py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="text-dark font-serif text-4xl font-light md:text-5xl">{t("title")}</h1>
         </div>
       </Section>
 
-      <Section className="py-16 px-6 bg-warm-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-2xl font-light text-dark text-center mb-6">
+      <Section className="bg-warm-white px-6 py-16">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-dark mb-6 text-center font-serif text-2xl font-light">
             {t("gettingThere")}
           </h2>
-          <p className="font-sans text-sm text-muted text-center leading-relaxed max-w-xl mx-auto">
+          <p className="text-muted mx-auto max-w-xl text-center font-sans text-sm leading-relaxed">
             {t("gettingThereText")}
           </p>
         </div>
       </Section>
 
-      <Section className="py-16 px-6 bg-cream">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-2xl font-light text-dark text-center mb-6">
+      <Section className="bg-cream px-6 py-16">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-dark mb-6 text-center font-serif text-2xl font-light">
             {t("whereToStay")}
           </h2>
-          <p className="font-sans text-sm text-muted text-center leading-relaxed max-w-xl mx-auto mb-10">
+          <p className="text-muted mx-auto mb-10 max-w-xl text-center font-sans text-sm leading-relaxed">
             {t("whereToStayText")}
           </p>
-          <p className="font-sans text-sm text-muted text-center italic max-w-md mx-auto">
+          <p className="text-muted mx-auto max-w-md text-center font-sans text-sm italic">
             {t("whereToStayNote")}
           </p>
         </div>
       </Section>
 
-      <Section className="py-16 px-6 bg-warm-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-2xl font-light text-dark text-center mb-6">
+      <Section className="bg-warm-white px-6 py-16">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-dark mb-6 text-center font-serif text-2xl font-light">
             {t("thingsToDo")}
           </h2>
-          <p className="font-sans text-sm text-muted text-center leading-relaxed max-w-xl mx-auto">
+          <p className="text-muted mx-auto max-w-xl text-center font-sans text-sm leading-relaxed">
             {t("thingsToDoText")}
           </p>
         </div>

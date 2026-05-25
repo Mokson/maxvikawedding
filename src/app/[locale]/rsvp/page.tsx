@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { Section } from "@/components/section";
-import { RsvpForm } from "@/components/rsvp-form";
+import { Section } from "@/components/shared/section-wrapper";
+import { RsvpForm } from "@/components/shared/rsvp-form";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -19,19 +19,15 @@ function RsvpContent() {
 
   return (
     <div className="pt-24">
-      <Section className="py-24 px-6 bg-cream">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="font-serif text-4xl md:text-5xl font-light text-dark">
-            {t("title")}
-          </h1>
-          <p className="font-sans text-sm text-muted mt-4">
-            {t("intro")}
-          </p>
+      <Section className="bg-cream px-6 py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="text-dark font-serif text-4xl font-light md:text-5xl">{t("title")}</h1>
+          <p className="text-muted mt-4 font-sans text-sm">{t("intro")}</p>
         </div>
       </Section>
 
-      <Section className="py-16 px-6 bg-warm-white">
-        <div className="max-w-md mx-auto">
+      <Section className="bg-warm-white px-6 py-16">
+        <div className="mx-auto max-w-md">
           <RsvpForm />
         </div>
       </Section>

@@ -2,7 +2,6 @@
 
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
 
 export function LanguageToggle() {
   const locale = useLocale();
@@ -19,7 +18,7 @@ export function LanguageToggle() {
   return (
     <button
       onClick={handleSwitch}
-      className="text-xs font-sans font-medium tracking-[0.15em] text-muted hover:text-dark transition-colors px-2 py-1 border border-taupe/30 rounded"
+      className="text-muted hover:text-dark border-taupe/30 rounded border px-2 py-1 font-sans text-xs font-medium tracking-[0.15em] transition-colors"
       aria-label={`Switch to ${otherLocale === "en" ? "English" : "Ukrainian"}`}
     >
       {label}

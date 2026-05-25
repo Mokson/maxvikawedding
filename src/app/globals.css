@@ -1,16 +1,56 @@
 @import "tailwindcss";
+@import "../../node_modules/tw-animate-css/dist/tw-animate.css";
+@import "../styles/tokens.css";
 
 @theme inline {
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Montserrat", system-ui, sans-serif;
 
-  --color-cream: #faf8f5;
-  --color-warm-white: #f5f0eb;
-  --color-taupe: #b8a99a;
-  --color-dark: #2c2c2c;
-  --color-muted: #6b6b6b;
-  --color-accent: #c9a96e;
-  --color-accent-light: #e8d5b0;
+  /* shadcn semantic colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  /* Design system colors */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-border-color: var(--border-color);
+  --color-accent-color: var(--accent-color);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-blush: var(--accent-blush);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  /* Aliases for existing component classes */
+  --color-cream: var(--bg);
+  --color-warm-white: var(--surface);
+  --color-dark: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-accent: var(--accent-color);
+  --color-taupe: var(--border-color);
+  --color-accent-light: var(--accent-soft);
+  --color-border: var(--border-color);
 }
 
 html {
@@ -18,19 +58,35 @@ html {
 }
 
 body {
-  background-color: var(--color-cream);
-  color: var(--color-dark);
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: var(--font-sans);
 }
 
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+}
+
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {

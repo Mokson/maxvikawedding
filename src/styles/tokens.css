@@ -1,0 +1,98 @@
+:root {
+  /* Core design tokens (Open Design, OKLch) */
+  --bg: oklch(97.5% 0.007 80);
+  --surface: oklch(99% 0.004 80);
+  --fg: oklch(25% 0.015 55);
+  --fg-muted: oklch(52% 0.02 55);
+  --border-color: oklch(88% 0.012 70);
+  --accent-color: oklch(58% 0.09 155);
+
+  /* Extended design tokens */
+  --accent-soft: color-mix(in oklch, var(--accent-color) 14%, transparent);
+  --accent-hover: oklch(52% 0.1 155);
+  --accent-blush: oklch(76% 0.05 15);
+  --accent-gold: oklch(74% 0.1 75);
+  --fg-soft: color-mix(in oklch, var(--fg) 6%, transparent);
+
+  /* Semantic */
+  --success: oklch(62% 0.12 150);
+  --error: oklch(58% 0.14 22);
+  --info: oklch(58% 0.08 240);
+
+  /* shadcn semantic tokens */
+  --background: var(--bg);
+  --foreground: var(--fg);
+  --card: var(--surface);
+  --card-foreground: var(--fg);
+  --popover: var(--surface);
+  --popover-foreground: var(--fg);
+  --primary: var(--accent-color);
+  --primary-foreground: var(--surface);
+  --secondary: var(--surface);
+  --secondary-foreground: var(--fg);
+  --muted-foreground: var(--fg-muted);
+  --accent-foreground: var(--fg);
+  --destructive: var(--error);
+  --destructive-foreground: var(--surface);
+  --input: var(--border-color);
+  --ring: var(--accent-color);
+  --radius: 0.375rem;
+
+  /* Type scale */
+  --fs-hero: clamp(48px, 7vw, 96px);
+  --fs-h1: clamp(36px, 5vw, 64px);
+  --fs-h2: clamp(28px, 3.5vw, 40px);
+  --fs-h3: 22px;
+  --fs-lead: 19px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-meta: 12px;
+  --fs-eyebrow: 11px;
+
+  /* Spacing (8pt grid) */
+  --gap-xs: 8px;
+  --gap-sm: 12px;
+  --gap-md: 20px;
+  --gap-lg: 32px;
+  --gap-xl: 56px;
+  --gap-2xl: 96px;
+
+  /* Layout */
+  --container-max: 1120px;
+  --section-py: clamp(64px, 10vw, 120px);
+
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 800ms;
+}
+
+/* Palette: Rose Gold */
+[data-palette="rose"] {
+  --accent-color: #d4a88c;
+  --accent-hover: #9e6f52;
+  --accent-soft: color-mix(in oklch, #d4a88c 14%, transparent);
+  --accent-blush: #f0d9d1;
+  --border-color: #c4a99a;
+  --fg-muted: #696059;
+}
+
+/* Palette: Champagne */
+[data-palette="champagne"] {
+  --accent-color: #c9a96e;
+  --accent-hover: #8e7332;
+  --accent-soft: color-mix(in oklch, #c9a96e 14%, transparent);
+  --accent-blush: #fce8d5;
+  --border-color: #bfad9e;
+  --fg-muted: #71695e;
+}
+
+/* Palette: Terracotta */
+[data-palette="terra"] {
+  --accent-color: #c08b6e;
+  --accent-hover: #8f5f42;
+  --accent-soft: color-mix(in oklch, #c08b6e 14%, transparent);
+  --accent-blush: #eeddd2;
+  --border-color: #b5a295;
+  --fg-muted: #6c6259;
+}

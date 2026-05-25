@@ -4,9 +4,12 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { SetLang } from "@/components/set-lang";
+import { cormorant, montserrat } from "@/lib/fonts";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
+import { StickyRsvpCta } from "@/components/layout/sticky-rsvp-cta";
+import { ThemeConfigurator } from "@/components/layout/theme-configurator";
+import "@/app/globals.css";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -49,11 +52,20 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <SetLang />
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer />
-    </NextIntlClientProvider>
+    <html
+      lang={locale}
+      className={`${cormorant.variable} ${montserrat.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="flex min-h-screen flex-col antialiased">
+        <NextIntlClientProvider messages={messages}>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <StickyRsvpCta />
+          <ThemeConfigurator />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

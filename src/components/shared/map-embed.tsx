@@ -9,7 +9,7 @@ export function MapEmbed({ venue, address }: Props) {
   const query = encodeURIComponent(`${venue}, ${address}`);
 
   return (
-    <div className="w-full aspect-[16/9] mt-4 rounded overflow-hidden border border-taupe/20">
+    <div className="border-taupe/20 mt-4 aspect-[16/9] w-full overflow-hidden rounded border">
       <iframe
         src={`https://maps.google.com/maps?q=${query}&output=embed&z=15`}
         width="100%"
