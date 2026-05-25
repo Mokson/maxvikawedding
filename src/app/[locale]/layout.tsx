@@ -23,6 +23,13 @@ export async function generateMetadata({
   return {
     title: messages.meta.title,
     description: messages.meta.description,
+    icons: {
+      icon: [
+        { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-256.png", sizes: "256x256", type: "image/png" },
+      ],
+      apple: "/apple-touch-icon.png",
+    },
   };
 }
 
