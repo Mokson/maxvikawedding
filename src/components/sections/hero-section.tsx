@@ -16,7 +16,6 @@ export function HeroSection() {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-16"
     >
       <div className="absolute inset-0 bg-[url('/images/hero-wedding.jpg')] bg-cover bg-center" />
-      <div className="absolute inset-0 bg-[rgba(48,42,36,0.45)]" />
 
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
         <p className="animate-fade-in mb-8 font-serif text-3xl font-normal italic tracking-normal text-white/70 [animation-delay:200ms] md:text-4xl">

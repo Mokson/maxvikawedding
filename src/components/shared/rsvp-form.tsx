@@ -40,13 +40,13 @@ export function RsvpForm() {
         animate={{ opacity: 1, y: 0 }}
         className="py-12 text-center"
       >
-        <h3 className="text-foreground mb-4 font-serif text-3xl font-light">
+        <h3 className="text-dark mb-4 font-serif text-3xl font-light">
           {t("successTitle")}
         </h3>
-        <p className="text-muted-foreground mb-8 font-sans text-sm">{t("successMessage")}</p>
+        <p className="text-muted mb-8 font-sans text-sm">{t("successMessage")}</p>
         <button
           onClick={() => setState("idle")}
-          className="text-muted-foreground hover:text-foreground font-sans text-xs tracking-[0.15em] uppercase underline underline-offset-4 transition-colors"
+          className="text-muted hover:text-dark font-sans text-xs tracking-[0.15em] uppercase underline underline-offset-4 transition-colors"
         >
           {t("sendAnother")}
         </button>
@@ -59,7 +59,7 @@ export function RsvpForm() {
       <div className="space-y-2">
         <Label
           htmlFor="name"
-          className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase"
+          className="text-muted font-sans text-xs tracking-[0.15em] uppercase"
         >
           {t("name")}
         </Label>
@@ -69,7 +69,7 @@ export function RsvpForm() {
       <div className="space-y-2">
         <Label
           htmlFor="email"
-          className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase"
+          className="text-muted font-sans text-xs tracking-[0.15em] uppercase"
         >
           {t("email")}
         </Label>
@@ -77,7 +77,7 @@ export function RsvpForm() {
       </div>
 
       <div className="space-y-4">
-        <p className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase">
+        <p className="text-muted font-sans text-xs tracking-[0.15em] uppercase">
           {t("attending")}
         </p>
         <div className="grid grid-cols-2 gap-4">
@@ -91,8 +91,8 @@ export function RsvpForm() {
               onClick={() => setAttending(opt.value)}
               className={`cursor-pointer border py-3 text-center font-sans text-xs tracking-[0.15em] uppercase transition-colors ${
                 attending === opt.value
-                  ? "border-foreground text-foreground"
-                  : "text-muted-foreground"
+                  ? "border-dark text-dark"
+                  : "text-muted"
               }`}
             >
               {opt.label}
@@ -104,7 +104,7 @@ export function RsvpForm() {
 
       <div className="grid grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase">
+          <Label className="text-muted font-sans text-xs tracking-[0.15em] uppercase">
             {t("adults")}
           </Label>
           <Select name="adults" defaultValue="1">
@@ -121,7 +121,7 @@ export function RsvpForm() {
           </Select>
         </div>
         <div className="space-y-2">
-          <Label className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase">
+          <Label className="text-muted font-sans text-xs tracking-[0.15em] uppercase">
             {t("children")}
           </Label>
           <Select name="children" defaultValue="0">
@@ -142,7 +142,7 @@ export function RsvpForm() {
       <div className="space-y-2">
         <Label
           htmlFor="dietary"
-          className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase"
+          className="text-muted font-sans text-xs tracking-[0.15em] uppercase"
         >
           {t("dietary")}
         </Label>
@@ -152,7 +152,7 @@ export function RsvpForm() {
       <div className="space-y-2">
         <Label
           htmlFor="message"
-          className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase"
+          className="text-muted font-sans text-xs tracking-[0.15em] uppercase"
         >
           {t("message")}
         </Label>

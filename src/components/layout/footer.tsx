@@ -32,7 +32,7 @@ export function Footer() {
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                className="text-muted hover:text-dark font-sans text-sm tracking-[0.05em] underline transition-colors"
+                className="text-muted hover:text-dark font-sans text-sm tracking-wider underline transition-colors"
               >
                 {t(link.key)}
               </a>

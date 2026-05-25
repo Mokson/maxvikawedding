@@ -36,7 +36,7 @@ export function VenueSection() {
               href={venue.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted hover:text-dark font-sans text-xs tracking-[0.1em] underline underline-offset-4 transition-colors"
+              className="text-muted hover:text-dark font-sans text-xs tracking-widest underline underline-offset-4 transition-colors"
             >
               @vinha_boutiquehotel
             </a>
@@ -44,7 +44,7 @@ export function VenueSection() {
               href={venue.instagramPost}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted hover:text-dark font-sans text-xs tracking-[0.1em] underline underline-offset-4 transition-colors"
+              className="text-muted hover:text-dark font-sans text-xs tracking-widest underline underline-offset-4 transition-colors"
             >
               {t("viewOnInstagram")}
             </a>
