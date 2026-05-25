@@ -5,7 +5,6 @@
   },
   "nav": {
     "ourStory": "Our Story",
-    "registry": "Registry",
     "rsvp": "RSVP",
     "travelStay": "Travel & Stay"
   },
@@ -36,12 +35,6 @@
     "coupleTitle": "Max & Victoria",
     "narrative": "We met unexpectedly and discovered we had everything in common. After years of adventures together, we're ready to make it official.",
     "restIsHistory": "And the Rest Is History"
-  },
-  "registry": {
-    "title": "Registry",
-    "message": "Many of you are traveling to celebrate with us, so your presence means the world to us and is all we ask for.",
-    "giftNote": "For those who have been asking, we've set up a small registry and honeymoon fund.",
-    "viewRegistry": "View Registry"
   },
   "rsvp": {
     "title": "RSVP",
@@ -78,7 +71,6 @@
     "emailUs": "Email Us",
     "venue": "Venue",
     "travelStay": "Travel & Stay",
-    "registry": "Registry",
     "rsvp": "RSVP"
   }
 }

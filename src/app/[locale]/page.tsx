@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -24,46 +25,58 @@ function HomeContent() {
       <Hero />
 
       <Section className="py-24 px-6 bg-cream" id="venue">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl font-light text-center text-dark mb-16">
-            {t("details")}
-          </h2>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="aspect-[4/5] rounded overflow-hidden relative">
+              <Image
+                src="/images/photo-couple-1.jpg"
+                alt="Max & Victoria"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
 
-          <div className="max-w-lg mx-auto text-center">
-            <div className="w-full aspect-[4/3] bg-taupe/20 rounded mb-8" />
-            <h3 className="font-serif text-2xl font-light text-dark">
-              {t("venue")}
-            </h3>
-            <p className="font-serif text-xl text-accent mt-2">
-              {t("venueTime")}
-            </p>
-            <p className="font-sans text-sm text-muted mt-4 leading-relaxed whitespace-pre-line">
-              {t("venueAddress")}
-            </p>
-            <MapEmbed
-              venue={t("venue")}
-              address={t("venueAddress")}
-            />
+            <div className="text-center md:text-left">
+              <h2 className="font-serif text-3xl md:text-4xl font-light text-dark mb-10">
+                {t("details")}
+              </h2>
+              <p className="font-serif text-xl text-accent mb-4">
+                {t("venueTime")}
+              </p>
+              <h3 className="font-serif text-2xl font-light text-dark">
+                {t("venue")}
+              </h3>
+              <p className="font-sans text-sm text-muted mt-4 leading-relaxed whitespace-pre-line">
+                {t("venueAddress")}
+              </p>
+              <MapEmbed
+                venue={t("venue")}
+                address={t("venueAddress")}
+              />
+            </div>
           </div>
         </div>
       </Section>
 
-      <Section className="py-24 px-6 bg-warm-white">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted mb-4">
+      <section className="relative py-32 px-6 overflow-hidden isolate">
+        <div className="absolute inset-0 bg-[url('/images/photo-unsplash-1.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-dark/40" />
+        <div className="relative z-10 max-w-2xl mx-auto text-center">
+          <p className="font-sans text-xs tracking-[0.3em] uppercase text-cream/80 mb-4">
             {t("joinUs")}
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl font-light text-dark mb-8">
+          <h2 className="font-serif text-3xl md:text-5xl font-light text-cream mb-10">
             {t("hopeMakeIt")}
           </h2>
           <Link
             href="/rsvp"
-            className="inline-block font-sans text-xs font-medium tracking-[0.2em] uppercase border border-dark px-10 py-4 text-dark hover:bg-dark hover:text-cream transition-colors"
+            className="inline-block font-sans text-xs font-medium tracking-[0.2em] uppercase bg-cream/95 px-12 py-5 text-dark hover:bg-cream transition-colors"
           >
             {t("rsvpButton")}
           </Link>
         </div>
-      </Section>
+      </section>
     </>
   );
 }

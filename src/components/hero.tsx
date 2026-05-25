@@ -8,7 +8,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-warm-white overflow-hidden pt-16">
-      <div className="absolute inset-0 bg-[url('/images/hero-placeholder.jpg')] bg-cover bg-center opacity-20" />
+      <div className="absolute inset-0 bg-[url('/images/photo-unsplash-1.jpg')] bg-cover bg-center opacity-20" />
 
       <div className="relative z-10 text-center px-6 flex flex-col items-center">
         <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted mb-6 animate-fade-in [animation-delay:200ms]">

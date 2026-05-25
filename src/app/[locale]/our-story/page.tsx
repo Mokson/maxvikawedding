@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/section";
@@ -31,7 +32,16 @@ function OurStoryContent() {
 
       <Section className="py-16 px-6 bg-warm-white">
         <div className="max-w-4xl mx-auto">
-          <div className="w-full aspect-[16/9] bg-taupe/10 rounded mb-16" />
+          <div className="w-full aspect-[16/9] rounded mb-16 overflow-hidden relative">
+            <Image
+              src="/images/photo-couple-2.jpg"
+              alt="Max & Victoria"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 896px"
+              priority
+            />
+          </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-3xl mx-auto">
             <blockquote className="text-center">
@@ -70,12 +80,23 @@ function OurStoryContent() {
           <h2 className="font-serif text-3xl font-light text-dark mb-12">
             {t("restIsHistory")}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { src: "/images/photo-unsplash-1.jpg", alt: "Wedding ceremony arch" },
+              { src: "/images/gallery-3.jpg", alt: "Wedding bouquet" },
+            ].map((img) => (
               <div
-                key={i}
-                className="aspect-square bg-taupe/10 rounded"
-              />
+                key={img.src}
+                className="aspect-square rounded overflow-hidden relative"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 300px"
+                />
+              </div>
             ))}
           </div>
         </div>

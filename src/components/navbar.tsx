@@ -12,7 +12,6 @@ export function Navbar() {
 
   const links = [
     { href: "/our-story" as const, label: t("ourStory") },
-    { href: "/registry" as const, label: t("registry") },
     { href: "/travel-stay" as const, label: t("travelStay") },
   ];
 
