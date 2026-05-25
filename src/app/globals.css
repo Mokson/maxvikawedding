@@ -96,3 +96,70 @@ body {
 .animate-fade-in-up {
   animation: fade-in-up 1s ease-out both;
 }
+
+/* Preset: Natural (Open Design) component overrides */
+[data-preset="natural"] [data-slot="button"][data-variant="default"] {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: 6px;
+}
+[data-preset="natural"] [data-slot="button"][data-variant="default"]:hover {
+  background-color: var(--accent-hover);
+}
+[data-preset="natural"] [data-slot="input"],
+[data-preset="natural"] [data-slot="textarea"],
+[data-preset="natural"] [data-slot="select-trigger"] {
+  background-color: var(--surface);
+  border-radius: 4px;
+}
+[data-preset="natural"] [data-slot="input"]:focus-visible,
+[data-preset="natural"] [data-slot="textarea"]:focus-visible,
+[data-preset="natural"] [data-slot="select-trigger"]:focus-visible {
+  border-color: var(--accent-color);
+}
+[data-preset="natural"] [data-slot="radio-card"] {
+  background-color: var(--surface);
+  border-color: var(--border-color);
+  border-radius: 4px;
+}
+
+/* Preset: Editorial (current site) component overrides */
+[data-preset="editorial"] [data-slot="button"][data-variant="default"] {
+  background-color: transparent;
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  border-radius: 1px;
+  box-shadow: none;
+}
+[data-preset="editorial"] [data-slot="button"][data-variant="default"]:hover {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+[data-preset="editorial"] [data-slot="button"][data-variant="outline"] {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+[data-preset="editorial"] [data-slot="input"],
+[data-preset="editorial"] [data-slot="textarea"],
+[data-preset="editorial"] [data-slot="select-trigger"] {
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+[data-preset="editorial"] [data-slot="input"]:focus-visible,
+[data-preset="editorial"] [data-slot="textarea"]:focus-visible,
+[data-preset="editorial"] [data-slot="select-trigger"]:focus-visible {
+  border-bottom-color: var(--fg);
+  box-shadow: none;
+}
+[data-preset="editorial"] [data-slot="radio-card"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+}

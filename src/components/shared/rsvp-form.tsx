@@ -4,6 +4,18 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { submitRsvp } from "@/actions/rsvp";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 type FormState = "idle" | "sending" | "success" | "error";
 
@@ -28,11 +40,13 @@ export function RsvpForm() {
         animate={{ opacity: 1, y: 0 }}
         className="py-12 text-center"
       >
-        <h3 className="text-dark mb-4 font-serif text-3xl font-light">{t("successTitle")}</h3>
-        <p className="text-muted mb-8 font-sans text-sm">{t("successMessage")}</p>
+        <h3 className="text-foreground mb-4 font-serif text-3xl font-light">
+          {t("successTitle")}
+        </h3>
+        <p className="text-muted-foreground mb-8 font-sans text-sm">{t("successMessage")}</p>
         <button
           onClick={() => setState("idle")}
-          className="text-muted hover:text-dark font-sans text-xs tracking-[0.15em] uppercase underline underline-offset-4 transition-colors"
+          className="text-muted-foreground hover:text-foreground font-sans text-xs tracking-[0.15em] uppercase underline underline-offset-4 transition-colors"
         >
           {t("sendAnother")}
         </button>
@@ -42,112 +56,108 @@ export function RsvpForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label
+      <div className="space-y-2">
+        <Label
           htmlFor="name"
-          className="text-muted mb-2 block font-sans text-xs tracking-[0.15em] uppercase"
+          className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase"
         >
           {t("name")}
-        </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          className="border-taupe text-dark focus:border-dark placeholder:text-muted w-full border-b bg-transparent py-3 font-sans text-sm transition-colors outline-none"
-        />
+        </Label>
+        <Input id="name" name="name" type="text" required />
       </div>
 
-      <div>
-        <label
+      <div className="space-y-2">
+        <Label
           htmlFor="email"
-          className="text-muted mb-2 block font-sans text-xs tracking-[0.15em] uppercase"
+          className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase"
         >
           {t("email")}
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          className="border-taupe text-dark focus:border-dark placeholder:text-muted w-full border-b bg-transparent py-3 font-sans text-sm transition-colors outline-none"
-        />
+        </Label>
+        <Input id="email" name="email" type="email" required />
       </div>
 
-      <div>
-        <p className="text-muted mb-4 font-sans text-xs tracking-[0.15em] uppercase">
+      <div className="space-y-4">
+        <p className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase">
           {t("attending")}
         </p>
-        <div className="flex gap-4">
-          <label className="flex-1 cursor-pointer">
-            <input type="radio" name="attending" value="yes" required className="peer sr-only" />
-            <span className="border-taupe text-muted peer-checked:border-dark peer-checked:text-dark peer-checked:bg-dark/5 block border py-3 text-center font-sans text-xs tracking-[0.15em] uppercase transition-colors">
-              {t("yes")}
-            </span>
-          </label>
-          <label className="flex-1 cursor-pointer">
-            <input type="radio" name="attending" value="no" className="peer sr-only" />
-            <span className="border-taupe text-muted peer-checked:border-dark peer-checked:text-dark peer-checked:bg-dark/5 block border py-3 text-center font-sans text-xs tracking-[0.15em] uppercase transition-colors">
-              {t("no")}
-            </span>
-          </label>
-        </div>
+        <RadioGroup name="attending" required className="grid grid-cols-2 gap-4">
+          {[
+            { value: "yes", label: t("yes") },
+            { value: "no", label: t("no") },
+          ].map((opt) => (
+            <label key={opt.value} className="cursor-pointer">
+              <RadioGroupItem value={opt.value} className="peer sr-only" />
+              <span
+                data-slot="radio-card"
+                className="text-muted-foreground peer-data-[state=checked]:border-foreground peer-data-[state=checked]:text-foreground block border py-3 text-center font-sans text-xs tracking-[0.15em] uppercase transition-colors"
+              >
+                {opt.label}
+              </span>
+            </label>
+          ))}
+        </RadioGroup>
       </div>
 
       <div className="grid grid-cols-2 gap-6">
-        <div className="flex flex-col">
-          <label
-            htmlFor="adults"
-            className="text-muted mb-2 font-sans text-xs tracking-[0.15em] uppercase"
-          >
+        <div className="space-y-2">
+          <Label className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase">
             {t("adults")}
-          </label>
-          <select
-            id="adults"
-            name="adults"
-            className="border-taupe text-dark focus:border-dark mt-auto w-full border-b bg-transparent py-3 font-sans text-sm transition-colors outline-none"
-          >
-            {[1, 2, 3, 4, 5].map((n) => (
-              <option key={n} value={n}>
-                {n}
-              </option>
-            ))}
-          </select>
+          </Label>
+          <Select name="adults" defaultValue="1">
+            <SelectTrigger className="w-full">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {[1, 2, 3, 4, 5].map((n) => (
+                <SelectItem key={n} value={String(n)}>
+                  {n}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
-        <div className="flex flex-col">
-          <label
-            htmlFor="children"
-            className="text-muted mb-2 font-sans text-xs tracking-[0.15em] uppercase"
-          >
+        <div className="space-y-2">
+          <Label className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase">
             {t("children")}
-          </label>
-          <select
-            id="children"
-            name="children"
-            className="border-taupe text-dark focus:border-dark mt-auto w-full border-b bg-transparent py-3 font-sans text-sm transition-colors outline-none"
-          >
-            {[0, 1, 2, 3, 4].map((n) => (
-              <option key={n} value={n}>
-                {n}
-              </option>
-            ))}
-          </select>
+          </Label>
+          <Select name="children" defaultValue="0">
+            <SelectTrigger className="w-full">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {[0, 1, 2, 3, 4].map((n) => (
+                <SelectItem key={n} value={String(n)}>
+                  {n}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
-      <div>
-        <label
+      <div className="space-y-2">
+        <Label
+          htmlFor="dietary"
+          className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase"
+        >
+          {t("dietary")}
+        </Label>
+        <Input id="dietary" name="dietary" type="text" placeholder={t("dietaryPlaceholder")} />
+      </div>
+
+      <div className="space-y-2">
+        <Label
           htmlFor="message"
-          className="text-muted mb-2 block font-sans text-xs tracking-[0.15em] uppercase"
+          className="text-muted-foreground font-sans text-xs tracking-[0.15em] uppercase"
         >
           {t("message")}
-        </label>
-        <textarea
+        </Label>
+        <Textarea
           id="message"
           name="message"
           rows={4}
           placeholder={t("messagePlaceholder")}
-          className="border-taupe text-dark focus:border-dark placeholder:text-muted w-full resize-none border-b bg-transparent py-3 font-sans text-sm transition-colors outline-none"
+          className="resize-none"
         />
       </div>
 
@@ -165,13 +175,13 @@ export function RsvpForm() {
         )}
       </AnimatePresence>
 
-      <button
+      <Button
         type="submit"
         disabled={state === "sending"}
-        className="border-dark text-dark hover:bg-dark hover:text-cream w-full border px-10 py-4 font-sans text-xs font-medium tracking-[0.2em] uppercase transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+        className="h-auto w-full py-4 font-sans text-xs tracking-[0.2em] uppercase"
       >
         {state === "sending" ? t("sending") : t("submit")}
-      </button>
+      </Button>
     </form>
   );
 }

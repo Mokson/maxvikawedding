@@ -96,3 +96,8 @@
   --border-color: #b5a295;
   --fg-muted: #6c6259;
 }
+
+/* Preset: Editorial (near-zero radius, outlined components) */
+[data-preset="editorial"] {
+  --radius: 0.0625rem;
+}

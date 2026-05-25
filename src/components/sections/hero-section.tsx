@@ -2,9 +2,12 @@
 
 import { useTranslations } from "next-intl";
 import { Countdown } from "@/components/shared/countdown";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 
 export function HeroSection() {
   const t = useTranslations("hero");
+  const { city, country } = siteConfig.wedding.venue;
 
   return (
     <section
@@ -30,9 +33,20 @@ export function HeroSection() {
           <div className="bg-taupe h-px w-16" />
         </div>
 
+        <p className="text-muted animate-fade-in mt-4 font-sans text-sm tracking-[0.15em] [animation-delay:1200ms]">
+          {city}, {country}
+        </p>
+
         <div className="animate-fade-in-up mt-16 opacity-40 [animation-delay:1300ms]">
           <Countdown />
         </div>
+
+        <Button
+          asChild
+          className="animate-fade-in-up mt-12 h-auto px-10 py-4 font-sans text-xs tracking-[0.2em] uppercase [animation-delay:1600ms]"
+        >
+          <a href="#rsvp">{t("rsvpButton")}</a>
+        </Button>
       </div>
     </section>
   );

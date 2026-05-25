@@ -16,6 +16,34 @@ export function TravelSection() {
         <div className="space-y-16">
           <div className="mx-auto max-w-xl text-center">
             <p className="text-accent mb-4 font-sans text-[11px] font-medium tracking-[0.2em] uppercase">
+              {t("theVenue")}
+            </p>
+            <p className="text-dark mb-2 font-serif text-xl font-light">{h("venue")}</p>
+            <p className="text-muted mb-4 font-sans text-sm leading-relaxed">
+              {h("venueAddress")}
+            </p>
+            <div className="flex items-center justify-center gap-6">
+              <a
+                href="https://www.instagram.com/vinha_boutiquehotel/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted hover:text-dark font-sans text-xs tracking-[0.1em] underline underline-offset-4 transition-colors"
+              >
+                @vinha_boutiquehotel
+              </a>
+              <a
+                href="https://www.instagram.com/p/DOOR0F9CAGX/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted hover:text-dark font-sans text-xs tracking-[0.1em] underline underline-offset-4 transition-colors"
+              >
+                {t("viewOnInstagram")}
+              </a>
+            </div>
+          </div>
+
+          <div className="mx-auto max-w-xl text-center">
+            <p className="text-accent mb-4 font-sans text-[11px] font-medium tracking-[0.2em] uppercase">
               {t("gettingThere")}
             </p>
             <p className="text-muted font-sans text-base leading-relaxed">

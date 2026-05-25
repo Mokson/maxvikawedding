@@ -7,7 +7,7 @@ import { useActiveSection } from "@/hooks/use-active-section";
 import { sections } from "@/config/navigation";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
-const NAV_SECTIONS = sections.filter((s) => s.id !== "hero");
+const NAV_SECTIONS = sections.filter((s) => s.id !== "hero" && s.id !== "travel");
 
 export function Navbar() {
   const t = useTranslations("nav");
