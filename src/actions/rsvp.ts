@@ -8,6 +8,7 @@ export async function submitRsvp(formData: FormData) {
   const attending = formData.get("attending") as string;
   const adults = formData.get("adults") as string;
   const children = formData.get("children") as string;
+  const alcohol = formData.get("alcohol") as string;
   const dietary = formData.get("dietary") as string;
   const message = formData.get("message") as string;
 
@@ -16,7 +17,7 @@ export async function submitRsvp(formData: FormData) {
   }
 
   try {
-    await sendRsvpEmail({ name, email, attending, adults, children, dietary, message });
+    await sendRsvpEmail({ name, email, attending, adults, children, alcohol, dietary, message });
     return { success: true };
   } catch {
     return { success: false, error: "Failed to send email" };

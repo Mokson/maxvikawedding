@@ -22,6 +22,7 @@ export function RsvpForm() {
   const t = useTranslations("rsvp");
   const [state, setState] = useState<FormState>("idle");
   const [attending, setAttending] = useState("");
+  const [alcohol, setAlcohol] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -137,6 +138,32 @@ export function RsvpForm() {
             </SelectContent>
           </Select>
         </div>
+      </div>
+
+      <div className="space-y-4">
+        <p className="text-muted font-sans text-xs tracking-[0.15em] uppercase">
+          {t("alcohol")}
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { value: "yes", label: t("alcoholYes") },
+            { value: "no", label: t("alcoholNo") },
+          ].map((opt) => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => setAlcohol(opt.value)}
+              className={`cursor-pointer border py-3 text-center font-sans text-xs tracking-[0.15em] uppercase transition-colors ${
+                alcohol === opt.value
+                  ? "border-primary bg-primary/30 text-dark"
+                  : "text-muted"
+              }`}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+        <input type="hidden" name="alcohol" value={alcohol} />
       </div>
 
       <div className="space-y-2">

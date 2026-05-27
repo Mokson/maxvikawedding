@@ -4,6 +4,7 @@ export type RsvpFormData = {
   attending: "yes" | "no";
   adults: string;
   children: string;
+  alcohol: string;
   dietary: string;
   message: string;
 };

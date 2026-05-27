@@ -16,6 +16,7 @@ type RsvpEmailData = {
   attending: string;
   adults: string;
   children: string;
+  alcohol: string;
   dietary: string;
   message: string;
 };
@@ -39,6 +40,7 @@ export async function sendRsvpEmail(data: RsvpEmailData) {
           <tr><td style="padding: 8px 0; color: #6b6b6b;">Response</td><td style="padding: 8px 0; font-weight: 600;">${attendingText}</td></tr>
           <tr><td style="padding: 8px 0; color: #6b6b6b;">Adults</td><td style="padding: 8px 0;">${esc(data.adults)}</td></tr>
           <tr><td style="padding: 8px 0; color: #6b6b6b;">Children (under 12)</td><td style="padding: 8px 0;">${esc(data.children)}</td></tr>
+          <tr><td style="padding: 8px 0; color: #6b6b6b;">Alcohol</td><td style="padding: 8px 0;">${data.alcohol === "yes" ? "Yes" : data.alcohol === "no" ? "No" : "Not specified"}</td></tr>
           ${data.dietary ? `<tr><td style="padding: 8px 0; color: #6b6b6b;">Dietary</td><td style="padding: 8px 0;">${esc(data.dietary)}</td></tr>` : ""}
           ${data.message ? `<tr><td style="padding: 8px 0; color: #6b6b6b;">Message</td><td style="padding: 8px 0;">${esc(data.message)}</td></tr>` : ""}
         </table>
