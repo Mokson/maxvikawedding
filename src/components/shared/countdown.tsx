@@ -19,11 +19,11 @@ export function Countdown() {
       {units.map((unit) => (
         <div key={unit.label} className="text-center">
           <span
-            className={`text-muted block font-serif text-lg font-light transition-opacity md:text-xl ${time ? "opacity-100" : "opacity-0"}`}
+            className={`text-white block font-serif text-2xl font-light transition-opacity md:text-3xl ${time ? "opacity-100" : "opacity-0"}`}
           >
             {String(unit.value).padStart(2, "0")}
           </span>
-          <span className="text-muted mt-1 block font-sans text-[9px] tracking-[0.2em] uppercase md:text-[10px]">
+          <span className="mt-1 block font-sans text-[10px] tracking-[0.2em] uppercase text-white/70 md:text-xs">
             {unit.label}
           </span>
         </div>
