@@ -91,7 +91,7 @@ export function RsvpForm() {
               onClick={() => setAttending(opt.value)}
               className={`cursor-pointer border py-3 text-center font-sans text-xs tracking-[0.15em] uppercase transition-colors ${
                 attending === opt.value
-                  ? "border-dark text-dark"
+                  ? "border-primary bg-primary/30 text-dark"
                   : "text-muted"
               }`}
             >

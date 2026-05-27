@@ -13,9 +13,9 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-16"
+      className="relative flex h-[900px] flex-col items-center justify-center overflow-hidden pt-16"
     >
-      <div className="absolute inset-0 bg-[url('/images/hero-wedding.jpg')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-[url('/images/hero-wedding.jpg')] bg-[length:1920px_auto] bg-[center_50%]" />
 
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
         <p className="animate-fade-in mb-8 font-serif text-3xl font-normal italic tracking-normal text-white/70 [animation-delay:200ms] md:text-4xl">
@@ -28,7 +28,7 @@ export function HeroSection() {
 
         <div className="animate-fade-in mt-10 flex items-center gap-6 [animation-delay:1000ms]">
           <div className="h-px w-16 bg-white/30" />
-          <p className="font-sans text-lg font-medium tracking-[0.3em] uppercase text-white/80 md:text-xl">
+          <p className="whitespace-nowrap font-sans text-lg font-medium tracking-[0.3em] uppercase text-white/80 md:text-xl">
             {t("date")}
           </p>
           <div className="h-px w-16 bg-white/30" />
@@ -50,7 +50,7 @@ export function HeroSection() {
 
         <a
           href="#rsvp"
-          className="animate-fade-in-up mt-12 border border-white/80 px-10 py-4 font-sans text-xs font-medium tracking-[0.2em] uppercase text-white transition-colors hover:bg-white hover:text-dark [animation-delay:1600ms]"
+          className="animate-fade-in-up mt-12 border border-white/80 bg-white/80 px-10 py-4 font-sans text-xs font-medium tracking-[0.2em] uppercase text-dark transition-colors hover:bg-primary hover:text-primary-foreground hover:border-primary [animation-delay:1600ms]"
         >
           {t("rsvpButton")}
         </a>
