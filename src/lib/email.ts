@@ -1,6 +1,14 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
 function esc(s: string | null): string {
   return (s ?? "")
@@ -24,9 +32,9 @@ type RsvpEmailData = {
 export async function sendRsvpEmail(data: RsvpEmailData) {
   const attendingText = data.attending === "yes" ? "Joyfully Accepts" : "Regretfully Declines";
 
-  await resend.emails.send({
-    from: process.env.RSVP_FROM_EMAIL || "RSVP <onboarding@resend.dev>",
-    to: process.env.RSVP_EMAIL || "email@example.com",
+  await transporter.sendMail({
+    from: process.env.SMTP_USER,
+    to: process.env.RSVP_EMAIL,
     subject: `Wedding RSVP: ${esc(data.name)} ${attendingText}`,
     html: `
       <div style="font-family: Georgia, serif; max-width: 500px; margin: 0 auto; padding: 40px 20px;">
