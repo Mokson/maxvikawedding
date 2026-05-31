@@ -1,5 +1,6 @@
 "use server";
 
+import * as Sentry from "@sentry/nextjs";
 import { sendRsvpEmail } from "@/lib/email";
 
 function maskName(s: string): string {
@@ -42,6 +43,10 @@ export async function submitRsvp(formData: FormData) {
     console.info("[RSVP] sent:", log);
     return { success: true };
   } catch (err) {
+    Sentry.captureException(err, {
+      tags: { action: "rsvp_submit" },
+      extra: { attending, adults, children },
+    });
     console.error("[RSVP] send failed:", log, err instanceof Error ? err.message : err);
     return { success: false, error: "Failed to send email" };
   }

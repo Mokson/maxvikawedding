@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
+import { posthog } from "@/lib/posthog";
 import { submitRsvp } from "@/actions/rsvp";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,6 +31,14 @@ export function RsvpForm() {
 
     const formData = new FormData(e.currentTarget);
     const result = await submitRsvp(formData);
+
+    if (result.success) {
+      posthog.capture("rsvp_submitted", {
+        attending: formData.get("attending") as string,
+        adults: Number(formData.get("adults")),
+        children: Number(formData.get("children")),
+      });
+    }
 
     setState(result.success ? "success" : "error");
   }

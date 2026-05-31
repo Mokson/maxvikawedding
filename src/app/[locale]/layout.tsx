@@ -9,6 +9,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { StickyRsvpCta } from "@/components/layout/sticky-rsvp-cta";
 import { ThemeConfigurator } from "@/components/layout/theme-configurator";
+import { PostHogProvider } from "@/components/providers/posthog-provider";
 import "@/app/globals.css";
 
 export function generateStaticParams() {
@@ -59,11 +60,13 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <body className="flex min-h-screen flex-col antialiased">
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <StickyRsvpCta />
-          <ThemeConfigurator />
+          <PostHogProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <StickyRsvpCta />
+            <ThemeConfigurator />
+          </PostHogProvider>
         </NextIntlClientProvider>
       </body>
     </html>

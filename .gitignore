@@ -44,5 +44,8 @@ yarn-error.log*
 next-env.d.ts
 .playwright-cli
 
+# sentry
+.sentryclirc
+
 # design tooling
 /opendesign/
